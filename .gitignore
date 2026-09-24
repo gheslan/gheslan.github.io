@@ -1,0 +1,8 @@
+# Private source files — never publish (the PDF CV contains a phone number)
+docs/
+docs_not_in_the_site/
+.claude/
+design-system/
+*.tmp
+Thumbs.db
+desktop.ini

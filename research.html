@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research — Guewen Heslan</title>
+  <meta name="description" content="Working papers and presentations of Guewen Heslan on trade, environmental policy and maritime transport.">
+  <link rel="alternate" hreflang="en" href="research.html">
+  <link rel="alternate" hreflang="fr" href="fr/research.html">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="./">Guewen Heslan</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./">About</a></li>
+        <li><a href="research.html" aria-current="page">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="lang-switch" href="fr/research.html" hreflang="fr" lang="fr" aria-label="Version française">FR</a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+  <header class="reveal">
+    <h1 class="page-title">Research</h1>
+    <p class="page-lead">Papers in preparation. The results summarised below are preliminary and may change; drafts are not yet circulated.</p>
+  </header>
+
+  <section class="section">
+    <h2 class="reveal">Working papers</h2>
+    <ol class="papers">
+    <li class="reveal" id="decarb" style="--i:0">
+      <h3 lang="en">Decarbonizing shipping trade: short-term adaptation and long-term abatement strategies</h3>
+      <p class="authors">with Rodica Loisel, Corinne Bagoulla &amp; Pierre Marty</p>
+      <p class="status">Earlier version: “Maritime decarbonization pathways: a trade-off between operational and technical measures” — Marcel Boiteux Prize 2024 (FAEE)</p>
+      <p class="abstract">Decarbonizing shipping combines short-term operational levers, such as speed optimization, with the long-term adoption of new technologies and alternative fuels. We build a mixed-integer nonlinear fleet-deployment model calibrated on Asia–Europe liner services to study how carbon pricing shapes both, comparing a global carbon tax with the regionally scoped EU ETS across several technology-maturity scenarios.</p>
+      <figure class="figure">
+        <svg viewBox="0 0 360 220" role="img" aria-label="Stylized chart: as the carbon price rises, vessel speed falls while fleet size first rises then falls once low-carbon propulsion becomes competitive.">
+          <rect class="fig-zone fade" style="--d:1.6s" x="252" y="20" width="93" height="170" rx="4"/>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="34" text-anchor="middle">Low-carbon</text>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="46" text-anchor="middle">propulsion</text>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="58" text-anchor="middle">competitive</text>
+          <path class="fig-grid" d="M40 60H345M40 105H345M40 150H345" stroke-dasharray="2 5"/>
+          <path class="fig-axis" d="M40 20V190H345"/>
+          <path id="f1-speed" class="fig-line accent draw" style="--d:.2s" pathLength="1" d="M40 45 C 120 55, 190 120, 345 152"/>
+          <path id="f1-fleet" class="fig-line warm draw" style="--d:.6s" pathLength="1" d="M40 165 C 110 163, 160 64, 220 64 C 275 64, 305 128, 345 158"/>
+          <text class="fig-label accent fade" style="--d:1s" x="48" y="36">Vessel speed</text>
+          <text class="fig-label warm fade" style="--d:1.4s" x="196" y="52" text-anchor="middle">Fleet size</text>
+          <text class="fig-label" x="345" y="208" text-anchor="end">Carbon price →</text>
+          <circle class="fig-dot pop" style="--d:1.8s" r="5" cx="40" cy="165" data-mover="f1-fleet" data-duration="5200"/>
+        </svg>
+        <figcaption>Stylized illustration of preliminary results — not to scale.</figcaption>
+      </figure>
+      <details class="findings">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>Preliminary results</summary>
+        <div class="findings-body">
+          <ul>
+            <li>Carbon pricing acts first through speed: vessels slow down, and carriers need additional ships to maintain service frequency.</li>
+            <li>Fleet size responds non-monotonically to the carbon price, expanding before contracting once low-carbon propulsion becomes competitive.</li>
+            <li>The transition favours larger vessels and progressively redirects cargo toward the most carbon-efficient routes.</li>
+            <li>Without e-fuels, carbon pricing alone delivers only partial emission cuts, and regional pricing through the EU ETS does not trigger structural fuel switching.</li>
+          </ul>
+          <p class="note">Preliminary results, subject to change.</p>
+        </div>
+      </details>
+    </li>
+    <li class="reveal" id="trade" style="--i:0">
+      <h3 lang="en">Global trade under maritime environmental policy</h3>
+      <p class="authors">with Corinne Bagoulla</p>
+      <p class="abstract">The IMO’s sulphur rules — Emission Control Areas and the 2020 global sulphur cap — raise compliance costs for shipping, yet their effect on trade flows remains largely unknown. We build a route-level measure of each trade lane’s exposure to regulated waters and exploit the staggered roll-out of these rules in a structural gravity framework applied to US containerized trade.</p>
+      <figure class="figure">
+        <svg viewBox="0 0 360 220" role="img" aria-label="Stylized chart: after the regulation, the value of containerized trade on exposed routes declines gradually while shipped tonnage stays flat.">
+          <rect class="fig-zone fade" style="--d:.1s" x="150" y="20" width="195" height="170"/>
+          <path class="fig-grid" d="M40 90H345" />
+          <path class="fig-axis" d="M40 20V190H345"/>
+          <path class="fig-axis fade" d="M150 20V190" stroke-dasharray="4 4"/>
+          <text class="fig-label strong fade" x="156" y="34">Regulation</text>
+          <path class="fig-line muted draw" style="--d:.3s" pathLength="1" d="M40 88 L70 92 L100 89 L130 92 L150 90 L180 93 L210 88 L240 94 L270 89 L300 93 L340 90"/>
+          <path class="fig-line warm draw" style="--d:.6s" pathLength="1" d="M40 92 L70 88 L100 93 L130 89 L150 90 L180 104 L210 119 L240 133 L270 145 L300 155 L340 162"/>
+          <circle class="fig-dot pop" style="--d:1.00s" cx="180" cy="104" r="3.2"/>
+          <circle class="fig-dot pop" style="--d:1.12s" cx="210" cy="119" r="3.2"/>
+          <circle class="fig-dot pop" style="--d:1.24s" cx="240" cy="133" r="3.2"/>
+          <circle class="fig-dot pop" style="--d:1.36s" cx="270" cy="145" r="3.2"/>
+          <circle class="fig-dot pop" style="--d:1.48s" cx="300" cy="155" r="3.2"/>
+          <circle class="fig-dot pop" style="--d:1.60s" cx="340" cy="162" r="3.2"/>
+          <text class="fig-label fade" style="--d:1.6s" x="345" y="80" text-anchor="end">Tonnage</text>
+          <text class="fig-label warm fade" style="--d:1.9s" x="345" y="182" text-anchor="end">Trade value</text>
+          <text class="fig-label" x="345" y="208" text-anchor="end">Time →</text>
+        </svg>
+        <figcaption>Stylized illustration of preliminary results — not to scale.</figcaption>
+      </figure>
+      <details class="findings">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>Preliminary results</summary>
+        <div class="findings-body">
+          <ul>
+            <li>Exposure to sulphur regulation significantly reduces the value of containerized trade on exposed routes.</li>
+            <li>Physical tonnage shows no comparable response: the regulation appears to act on the composition of trade rather than on the volume shipped.</li>
+            <li>The effect builds up after implementation and is absent in placebo tests.</li>
+          </ul>
+          <p class="note">Preliminary results, subject to change.</p>
+        </div>
+      </details>
+    </li>
+    <li class="reveal" id="leak" style="--i:0">
+      <h3 lang="en">Spatial carbon leakage in shipping: port-call evasion under a regional versus a global carbon price</h3>
+      <p class="authors">Single-authored</p>
+      <p class="abstract">Since 2024, the EU ETS prices shipping emissions according to where ships call: in full within the EU, by half on legs entering or leaving it, not at all elsewhere. A carrier can therefore shrink its taxed perimeter by calling at a non-EU hub, without relocating anything. We quantify this leakage with a mobile tax base through a structural model of liner services on the real global port network, and compare the EU ETS with a universal IMO carbon price.</p>
+      <figure class="figure">
+        <div class="fig-controls" role="group" aria-label="Carbon pricing scenario">
+          <button type="button" data-state="regional" data-paths="f3-direct" data-caption="Under the EU ETS, a voyage entering the EU from outside is priced for half of its emissions." aria-pressed="true">Regional price (EU ETS)</button>
+          <button type="button" data-state="hub" data-paths="f3-a,f3-b" data-caption="Calling at a nearby non-EU hub leaves the long deep-sea leg unpriced: only the short final hop is taxed." aria-pressed="false">Hub call</button>
+          <button type="button" data-state="global" data-paths="f3-direct" data-caption="A universal carbon price — or a transport border adjustment — covers the whole voyage and closes the channel." aria-pressed="false">Global price</button>
+        </div>
+        <svg class="net" data-state="regional" viewBox="0 0 360 200" role="img" aria-label="Stylized map of a liner service from Asia to an EU port, directly or via a non-EU hub, showing which legs are priced.">
+          <path class="fig-zone" d="M262 0 H360 V200 H300 C 272 150, 270 60, 262 0 Z"/>
+          <text class="fig-label strong" x="340" y="22" text-anchor="end">EU</text>
+          <path id="f3-direct" class="leg leg-direct" d="M40 165 C 140 120, 220 92, 310 80"/>
+          <path id="f3-a" class="leg leg-a" d="M40 165 C 110 158, 170 150, 232 150"/>
+          <path id="f3-b" class="leg leg-b" d="M232 150 C 262 142, 288 112, 310 80"/>
+          <circle class="fig-node" cx="40" cy="165" r="6"/>
+          <g class="hub-node"><circle class="fig-node" cx="232" cy="150" r="6"/><text class="fig-label" x="226" y="176" text-anchor="middle">Non-EU hub</text></g>
+          <circle class="fig-node" cx="310" cy="80" r="6"/>
+          <text class="fig-label" x="40" y="190" text-anchor="middle">Asia</text>
+          <text class="fig-label" x="310" y="64" text-anchor="middle">EU port</text>
+          <circle class="fig-dot" r="4.5" cx="40" cy="165" data-mover="f3-direct" data-duration="3600"/>
+        </svg>
+        <p class="fig-caption-live" aria-live="polite">Under the EU ETS, a voyage entering the EU from outside is priced for half of its emissions.</p>
+        <ul class="fig-legend">
+          <li><svg viewBox="0 0 26 8" aria-hidden="true"><path d="M1 4H25" stroke="var(--warm)" stroke-width="2.4"/></svg>Fully priced</li>
+          <li><svg viewBox="0 0 26 8" aria-hidden="true"><path d="M1 4H25" stroke="var(--warm)" stroke-width="2.4" stroke-dasharray="5 4"/></svg>Half priced</li>
+          <li><svg viewBox="0 0 26 8" aria-hidden="true"><path d="M1 4H25" stroke="var(--fig-muted)" stroke-width="2.4"/></svg>Unpriced</li>
+        </ul>
+        <figcaption>Stylized illustration of preliminary results — not to scale.</figcaption>
+      </figure>
+      <details class="findings">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>Preliminary results</summary>
+        <div class="findings-body">
+          <ul>
+            <li>Most of the abatement gap between the EU ETS and a global price comes from partial coverage, not from rerouting.</li>
+            <li>Port-call evasion is a real but second-order channel, and it grows with the carbon price.</li>
+            <li>Its size hinges on the completeness of the list of neighbouring hubs designated under the anti-evasion rules: a few omissions restore much of the leakage.</li>
+            <li>A transport border carbon adjustment closes the channel, but most of what it gains is carbon that was never priced in the first place.</li>
+          </ul>
+          <p class="note">Preliminary results, subject to change.</p>
+        </div>
+      </details>
+    </li>
+    </ol>
+  </section>
+
+  <section class="section reveal">
+    <h2>Work in progress</h2>
+    <ul class="papers">
+      <li>
+        <h3 lang="en">The welfare implications of a carbon price for shipping</h3>
+        <p class="authors">Single-authored</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section reveal">
+    <h2>Conferences and presentations</h2>
+    <ol class="entries">
+    <li>
+      <span class="when">Apr 2026</span>
+      <div>
+        <h3 class="talk-title" lang="en">Global trade under environmental policy</h3>
+        <p class="org">Annual Conference of the EDGE Doctoral School, Le Mans Université</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Sep 2025</span>
+      <div>
+        <h3 class="talk-title" lang="en">Towards Green Shipping: A Fleet Model for Decarbonization Through Technical Measures and Alternative Fuels</h3>
+        <p class="org">FAERE Annual Conference</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Jun 2025</span>
+      <div>
+        <h3 class="talk-title" lang="en">Towards Green Shipping: A Fleet Model for Decarbonization Through Technical Measures and Alternative Fuels</h3>
+        <p class="org">IAME Annual Conference, Norwegian School of Economics, Bergen</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Feb 2025</span>
+      <div>
+        <h3 class="talk-title" lang="en">Maritime decarbonization pathways: a trade-off between operational and technical measures</h3>
+        <p class="org">11th International Conference on Mobility Challenges, ENS Paris-Saclay</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Nov 2024</span>
+      <div>
+        <h3 class="talk-title" lang="en">Maritime decarbonization pathways: a trade-off between operational and technical measures</h3>
+        <p class="org">FAEE Doctoral Workshop, Grenoble — Marcel Boiteux Prize</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Oct 2024</span>
+      <div>
+        <h3 class="talk-title" lang="en">Estimating power flexibility for households: a usage-based load decomposition</h3>
+        <p class="org">CISTEM Conference, Rabat, Morocco</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">Jun 2024</span>
+      <div>
+        <h3 class="talk-title" lang="en">Is carbon pricing effective in the shipping sector? A partial equilibrium model for fleet optimization</h3>
+        <p class="org">IAEE International Conference, Istanbul, Turkey</p>
+      </div>
+    </li>
+    <li>
+      <span class="when">May 2024</span>
+      <div>
+        <h3 class="talk-title" lang="en">Shipowners’ carbon tax strategies: A partial equilibrium model applied to CMA-CGM</h3>
+        <p class="org">Carbon Policy in the Maritime Sector Conference, Université Paris Nanterre</p>
+      </div>
+    </li>
+    </ol>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year">2026</span> Guewen Heslan</span>
+      <a href="mailto:guewen.heslan@u-pariscite.fr">guewen.heslan@u-pariscite.fr</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
