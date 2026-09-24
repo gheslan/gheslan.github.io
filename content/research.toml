@@ -1,0 +1,130 @@
+# =====================================================================
+# Research page: working papers, work in progress, conferences
+# `figure` links a paper to its animated illustration in src/figures.py
+# (leave it out for papers without a figure).
+# =====================================================================
+
+[[papers]]
+id = "decarb"
+figure = "decarb"
+title = "Decarbonizing shipping trade: short-term adaptation and long-term abatement strategies"
+authors = { en = "with Rodica Loisel, Corinne Bagoulla & Pierre Marty", fr = "avec Rodica Loisel, Corinne Bagoulla & Pierre Marty" }
+status = { en = "Earlier version: “Maritime decarbonization pathways: a trade-off between operational and technical measures” — Marcel Boiteux Prize 2024 (FAEE)", fr = "Version antérieure : « Maritime decarbonization pathways: a trade-off between operational and technical measures » — Prix Marcel Boiteux 2024 (FAEE)" }
+abstract.en = "Decarbonizing shipping combines short-term operational levers, such as speed optimization, with the long-term adoption of new technologies and alternative fuels. We build a mixed-integer nonlinear fleet-deployment model calibrated on Asia–Europe liner services to study how carbon pricing shapes both, comparing a global carbon tax with the regionally scoped EU ETS across several technology-maturity scenarios."
+abstract.fr = "La décarbonation du transport maritime combine des leviers opérationnels de court terme, comme l’optimisation de la vitesse, et l’adoption à long terme de nouvelles technologies et de carburants alternatifs. Nous construisons un modèle de déploiement de flotte en programmation non linéaire en nombres entiers, calibré sur les lignes régulières Asie–Europe, pour étudier comment la tarification du carbone agit sur ces deux dimensions, en comparant une taxe carbone mondiale et le SEQE-UE, de portée régionale, selon plusieurs scénarios de maturité technologique."
+findings.en = [
+  "Carbon pricing acts first through speed: vessels slow down, and carriers need additional ships to maintain service frequency. Once low-carbon propulsion becomes competitive, speeds return to their initial level.",
+  "Fleet size responds non-monotonically to the carbon price, expanding before contracting once low-carbon propulsion becomes competitive.",
+  "The transition favours larger vessels and progressively redirects cargo toward the most carbon-efficient routes.",
+  "Without e-fuels, carbon pricing alone delivers only partial emission cuts, and regional pricing through the EU ETS does not trigger structural fuel switching.",
+]
+findings.fr = [
+  "La tarification du carbone agit d’abord sur la vitesse : les navires ralentissent et les armateurs doivent mobiliser des navires supplémentaires pour maintenir la fréquence de service. Lorsque la propulsion bas-carbone devient compétitive, la vitesse revient à son niveau initial.",
+  "La taille de la flotte réagit de façon non monotone au prix du carbone : elle augmente avant de se contracter lorsque la propulsion bas-carbone devient compétitive.",
+  "La transition favorise les grands navires et réoriente progressivement les marchandises vers les routes les plus sobres en carbone.",
+  "Sans e-carburants, la tarification du carbone seule ne permet que des réductions partielles des émissions, et le SEQE-UE, régional, ne déclenche pas de changement structurel de carburant.",
+]
+
+[[papers]]
+id = "trade"
+figure = "trade"
+title = "Global trade under maritime environmental policy"
+authors = { en = "with Corinne Bagoulla", fr = "avec Corinne Bagoulla" }
+abstract.en = "The IMO’s sulphur rules — Emission Control Areas and the 2020 global sulphur cap — raise compliance costs for shipping, yet their effect on trade flows remains largely unknown. We build a route-level measure of each trade lane’s exposure to regulated waters and exploit the staggered roll-out of these rules in a structural gravity framework applied to US containerized trade."
+abstract.fr = "Les règles de l’OMI sur le soufre — zones de contrôle des émissions et plafond mondial de 2020 — augmentent les coûts de mise en conformité du transport maritime, mais leur effet sur les flux commerciaux reste largement inconnu. Nous construisons une mesure, route par route, de l’exposition de chaque liaison commerciale aux zones réglementées et exploitons le déploiement échelonné de ces règles dans un modèle de gravité structurel appliqué au commerce conteneurisé des États-Unis."
+findings.en = [
+  "Exposure to sulphur regulation significantly reduces the value of containerized trade on exposed routes.",
+  "Physical tonnage shows no comparable response: the regulation appears to act on the composition of trade rather than on the volume shipped.",
+  "The effect builds up after implementation and is absent in placebo tests.",
+]
+findings.fr = [
+  "L’exposition à la réglementation soufre réduit significativement la valeur du commerce conteneurisé sur les routes exposées.",
+  "Le tonnage transporté ne réagit pas de façon comparable : la réglementation semble agir sur la composition du commerce plutôt que sur les volumes.",
+  "L’effet se construit progressivement après la mise en œuvre et disparaît dans les tests placebo.",
+]
+
+[[papers]]
+id = "leak"
+figure = "leak"
+title = "Spatial carbon leakage in shipping: port-call evasion under a regional versus a global carbon price"
+authors = { en = "Single-authored", fr = "Seul auteur" }
+abstract.en = "Since 2024, the EU ETS prices shipping emissions according to where ships call: in full within the EU, by half on legs entering or leaving it, not at all elsewhere. A carrier can therefore shrink its taxed perimeter by calling at a non-EU hub, without relocating anything. We quantify this leakage with a mobile tax base through a structural model of liner services on the real global port network, and compare the EU ETS with a universal IMO carbon price."
+abstract.fr = "Depuis 2024, le SEQE-UE tarifie les émissions du transport maritime selon les escales : entièrement au sein de l’UE, pour moitié sur les trajets qui y entrent ou en sortent, pas du tout ailleurs. Un armateur peut donc réduire son périmètre taxé en faisant escale dans un hub hors UE, sans rien délocaliser. Nous quantifions cette fuite de carbone à assiette mobile à l’aide d’un modèle structurel de lignes régulières sur le réseau portuaire mondial réel, et comparons le SEQE-UE à un prix du carbone universel de l’OMI."
+findings.en = [
+  "Most of the abatement gap between the EU ETS and a global price comes from partial coverage, not from rerouting.",
+  "Port-call evasion is a real but second-order channel, and it grows with the carbon price.",
+  "Its size hinges on the completeness of the list of neighbouring hubs designated under the anti-evasion rules: a few omissions restore much of the leakage.",
+  "A transport border carbon adjustment closes the channel, but most of what it gains is carbon that was never priced in the first place.",
+]
+findings.fr = [
+  "L’essentiel de l’écart d’abattement entre le SEQE-UE et un prix mondial provient de la couverture partielle, non du réacheminement.",
+  "L’évitement par les escales est un canal réel mais de second ordre, qui s’accroît avec le prix du carbone.",
+  "Son ampleur dépend de l’exhaustivité de la liste des hubs voisins désignés par les règles anti-contournement : quelques omissions suffisent à rétablir une grande partie de la fuite.",
+  "Un ajustement carbone aux frontières appliqué au transport ferme ce canal, mais l’essentiel de son gain porte sur du carbone qui n’était pas tarifé au départ.",
+]
+
+# Titles only (no abstract yet)
+[[work_in_progress]]
+title = "The welfare implications of a carbon price for shipping"
+authors = { en = "Single-authored", fr = "Seul auteur" }
+
+# ---------------------------------------------------------------------
+# Conferences. `location` refers to a key of [locations] below (used by the map).
+# date = "YYYY-MM"
+# ---------------------------------------------------------------------
+[[talks]]
+date = "2026-04"
+title = "Global trade under environmental policy"
+venue = { en = "Annual Conference of the EDGE Doctoral School, Le Mans Université", fr = "Conférence annuelle de l’École doctorale EDGE, Le Mans Université" }
+location = "lemans"
+
+[[talks]]
+date = "2025-09"
+title = "Towards Green Shipping: A Fleet Model for Decarbonization Through Technical Measures and Alternative Fuels"
+venue = { en = "FAERE Annual Conference, Nantes", fr = "Congrès annuel de la FAERE, Nantes" }
+location = "nantes"
+
+[[talks]]
+date = "2025-06"
+title = "Towards Green Shipping: A Fleet Model for Decarbonization Through Technical Measures and Alternative Fuels"
+venue = { en = "IAME Annual Conference, Norwegian School of Economics, Bergen", fr = "Conférence annuelle de l’IAME, Norwegian School of Economics, Bergen" }
+location = "bergen"
+
+[[talks]]
+date = "2025-02"
+title = "Maritime decarbonization pathways: a trade-off between operational and technical measures"
+venue = { en = "11th International Conference on Mobility Challenges, ENS Paris-Saclay", fr = "11<sup>e</sup> International Conference on Mobility Challenges, ENS Paris-Saclay" }
+location = "paris"
+
+[[talks]]
+date = "2024-11"
+title = "Maritime decarbonization pathways: a trade-off between operational and technical measures"
+venue = { en = "FAEE Doctoral Workshop, Grenoble — Marcel Boiteux Prize", fr = "Atelier doctoral de la FAEE, Grenoble — Prix Marcel Boiteux" }
+location = "grenoble"
+
+[[talks]]
+date = "2024-10"
+title = "Estimating power flexibility for households: a usage-based load decomposition"
+venue = { en = "CISTEM Conference, Rabat, Morocco", fr = "Conférence CISTEM, Rabat, Maroc" }
+location = "rabat"
+
+[[talks]]
+date = "2024-06"
+title = "Is carbon pricing effective in the shipping sector? A partial equilibrium model for fleet optimization"
+venue = { en = "IAEE International Conference, Istanbul, Turkey", fr = "Conférence internationale de l’IAEE, Istanbul, Turquie" }
+location = "istanbul"
+
+[[talks]]
+date = "2024-05"
+title = "Shipowners’ carbon tax strategies: A partial equilibrium model applied to CMA-CGM"
+venue = { en = "Carbon Policy in the Maritime Sector Conference, Université Paris Nanterre", fr = "Conférence « Carbon Policy in the Maritime Sector », Université Paris Nanterre" }
+location = "paris"
+
+[locations]
+paris    = { name = { en = "Paris", fr = "Paris" }, lat = 48.86, lon = 2.35 }
+nantes   = { name = { en = "Nantes", fr = "Nantes" }, lat = 47.22, lon = -1.55 }
+lemans   = { name = { en = "Le Mans", fr = "Le Mans" }, lat = 48.00, lon = 0.20 }
+grenoble = { name = { en = "Grenoble", fr = "Grenoble" }, lat = 45.19, lon = 5.72 }
+bergen   = { name = { en = "Bergen", fr = "Bergen" }, lat = 60.39, lon = 5.32 }
+istanbul = { name = { en = "Istanbul", fr = "Istanbul" }, lat = 41.01, lon = 28.98 }
+rabat    = { name = { en = "Rabat", fr = "Rabat" }, lat = 34.02, lon = -6.84 }

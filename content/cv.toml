@@ -1,0 +1,89 @@
+# =====================================================================
+# CV page
+# `when`, `title`, `org`, `desc` accept either a plain string (same in both
+# languages) or a table { en = "...", fr = "..." }.
+# =====================================================================
+
+lead = { en = "PhD candidate in economics at Nantes Université (LEMNA) and ATER at Université Paris Cité.", fr = "Doctorant en économie à Nantes Université (LEMNA) et ATER à l’Université Paris Cité." }
+
+[[education]]
+when = { en = "Ongoing", fr = "En cours" }
+title = { en = "PhD in Economics", fr = "Doctorat en sciences économiques" }
+org = "Nantes Université · LEMNA"
+bullets.en = [
+  "<em>Thesis:</em> Demand dynamics of trade flows in gravity models. Effects on actors’ decarbonization strategies through a freight model for optimized ship dispatching.",
+  "<em>Supervisors:</em> Rodica Loisel (LEMNA), Corinne Bagoulla (LEMNA), Pierre Marty (LHEEA, Centrale Nantes)",
+]
+bullets.fr = [
+  "<em>Sujet :</em> Dynamique de la demande des flux commerciaux dans les modèles de gravité. Effets sur les stratégies de décarbonation des acteurs à travers un modèle de fret pour l’affectation optimisée des navires.",
+  "<em>Direction :</em> Rodica Loisel (LEMNA), Corinne Bagoulla (LEMNA), Pierre Marty (LHEEA, Centrale Nantes)",
+]
+
+[[education]]
+when = "2023"
+title = { en = "Master’s in International Economics and Development", fr = "Master Économie internationale et développement" }
+org = "Université Paris Dauphine – PSL"
+bullets.en = ["<em>Thesis:</em> Dynamic recursive computable general equilibrium model for a small open economy specialized in oil production and export, supervised by Sophie Meritet (CGEMP)"]
+bullets.fr = ["<em>Mémoire :</em> Modèle d’équilibre général calculable dynamique récursif pour une petite économie ouverte spécialisée dans la production et l’exportation de pétrole, sous la direction de Sophie Meritet (CGEMP)"]
+
+[[education]]
+when = "2022"
+title = { en = "Master’s in Prospective Modelling: Economics, Environment, Energy", fr = "Master Modélisation prospective : économie, environnement, énergie" }
+org = "Université Paris-Saclay · AgroParisTech"
+bullets.en = ["<em>Thesis:</em> Effects of a carbon tax increase in France: an approach with a computable general equilibrium model, supervised by Julien Lefèvre (CIRED) & Raphaël Cancé (MTE)"]
+bullets.fr = ["<em>Mémoire :</em> Effets d’une hausse de la taxe carbone en France : une approche par un modèle d’équilibre général calculable, sous la direction de Julien Lefèvre (CIRED) & Raphaël Cancé (MTE)"]
+
+[[teaching]]
+when = { en = "2026 – present", fr = "2026 – auj." }
+title = { en = "Temporary Teaching and Research Assistant (ATER)", fr = "Attaché temporaire d’enseignement et de recherche (ATER)" }
+org = "Université Paris Cité"
+desc = { en = "Environmental Economics (L1, lectures); Mathematics (L1), Macroeconomics (L1) and Statistics (L2), tutorials", fr = "Économie de l’environnement (L1, cours magistral) ; Mathématiques (L1), Macroéconomie (L1) et Statistiques (L2) en travaux dirigés" }
+
+[[teaching]]
+when = "2024 – 2025"
+title = { en = "Lecturer", fr = "Enseignant" }
+org = "IMT Atlantique"
+desc = { en = "Energy Economics — final-year engineering and international master’s students", fr = "Économie de l’énergie — élèves ingénieurs en dernière année et masters internationaux" }
+
+[[teaching]]
+when = "2024 – 2025"
+title = { en = "Teaching Assistant", fr = "Chargé de travaux dirigés" }
+org = "Nantes Université"
+desc = { en = "Mathematics — 1st year bachelor in Economics", fr = "Mathématiques — L1 Économie" }
+
+[[teaching]]
+when = "2021 – 2022"
+title = { en = "Teaching Assistant", fr = "Chargé de travaux dirigés" }
+org = "Université Paris Cité"
+desc = { en = "Mathematics — 1st year bachelor in Economics", fr = "Mathématiques — L1 Économie" }
+
+[[employment]]
+when = "2022"
+title = { en = "Macroeconomist intern", fr = "Stagiaire macroéconomiste" }
+org = "Ministère de la Transition écologique"
+desc = { en = "Effects of energy taxation with the GTAP-E-Power model", fr = "Effets de la fiscalité énergétique avec le modèle GTAP-E-Power" }
+
+[[employment]]
+when = "2021"
+title = { en = "Intern", fr = "Stagiaire" }
+org = "Ministère de la Transition écologique"
+desc = { en = "Economic impact analysis of a State-driven start-up incubator", fr = "Analyse d’impact économique d’un incubateur de start-up d’État" }
+
+[[employment]]
+when = "2019 – 2020"
+title = { en = "Intern", fr = "Stagiaire" }
+org = "ENSAI"
+
+[[awards]]
+when = "2024"
+title = { en = "Marcel Boiteux Prize", fr = "Prix Marcel Boiteux" }
+org = { en = "French Association of Energy Economists (FAEE)", fr = "Association des économistes de l’énergie (FAEE)" }
+desc = { en = "Second best doctoral work, for “Maritime decarbonization pathways: a trade-off between operational and technical measures”.", fr = "Deuxième meilleur travail doctoral, pour « Maritime decarbonization pathways: a trade-off between operational and technical measures »." }
+
+[[skills]]
+label = { en = "Programming", fr = "Programmation" }
+value = "GAMS, R, Python, Stata, LaTeX, VB.NET"
+
+[[skills]]
+label = { en = "Languages", fr = "Langues" }
+value = { en = "French (native), English (fluent), Italian (basic)", fr = "Français (langue maternelle), anglais (courant), italien (notions)" }

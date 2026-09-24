@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gheslan.github.io/sitemap.xml

@@ -1,0 +1,81 @@
+# =====================================================================
+# Teaching page and one page per current course
+#
+# Each current course gets its own page: teaching/<slug>.html (and fr/).
+# To publish course materials:
+#   1. put the file in files/teaching/<slug>/   (e.g. files/teaching/statistics/td1.pdf)
+#   2. add a [[courses.materials]] entry under the course below
+#   3. run:  python src/build.py
+# =====================================================================
+
+# Optional introduction shown above the courses (leave empty to hide)
+lead = { en = "", fr = "" }
+
+current_institution = "Université Paris Cité"
+current_year = "2026 – 2027"
+
+# icon: math | macro | stats | env | energy
+[[courses]]
+slug = "environmental-economics"
+icon = "env"
+name = { en = "Environmental Economics", fr = "Économie de l’environnement" }
+level = { en = "1st year bachelor (L1)", fr = "Licence 1" }
+format = { en = "Lectures", fr = "Cours magistral" }
+# Optional: short course description shown on the course page
+description = { en = "", fr = "" }
+# Optional: practical information (schedule, room, office hours…)
+info = { en = "", fr = "" }
+# Example material entry (uncomment and adapt):
+# [[courses.materials]]
+# title = { en = "Chapter 1 — Externalities", fr = "Chapitre 1 — Externalités" }
+# file = "files/teaching/environmental-economics/chapter1.pdf"
+# kind = "slides"        # slides | exercises | solutions | exam | reading | other
+# date = "2026-09"
+
+[[courses]]
+slug = "mathematics"
+icon = "math"
+name = { en = "Mathematics", fr = "Mathématiques" }
+level = { en = "1st year bachelor (L1)", fr = "Licence 1" }
+format = { en = "Tutorials", fr = "Travaux dirigés" }
+description = { en = "", fr = "" }
+info = { en = "", fr = "" }
+
+[[courses]]
+slug = "macroeconomics"
+icon = "macro"
+name = { en = "Macroeconomics", fr = "Macroéconomie" }
+level = { en = "1st year bachelor (L1)", fr = "Licence 1" }
+format = { en = "Tutorials", fr = "Travaux dirigés" }
+description = { en = "", fr = "" }
+info = { en = "", fr = "" }
+
+[[courses]]
+slug = "statistics"
+icon = "stats"
+name = { en = "Statistics", fr = "Statistiques" }
+level = { en = "2nd year bachelor (L2)", fr = "Licence 2" }
+format = { en = "Tutorials", fr = "Travaux dirigés" }
+description = { en = "", fr = "" }
+info = { en = "", fr = "" }
+
+# ---------------------------------------------------------------------
+# Previous courses (no dedicated page)
+# ---------------------------------------------------------------------
+[[previous]]
+name = { en = "Energy Economics", fr = "Économie de l’énergie" }
+org = "IMT Atlantique"
+audience = { en = "Final-year engineering & international master’s students", fr = "Élèves ingénieurs en dernière année & masters internationaux" }
+years = "2024 – 2025"
+
+[[previous]]
+name = { en = "Mathematics", fr = "Mathématiques" }
+org = "Nantes Université"
+audience = { en = "1st year bachelor in Economics", fr = "L1 Économie" }
+years = "2024 – 2025"
+
+[[previous]]
+name = { en = "Mathematics", fr = "Mathématiques" }
+org = "Université Paris Cité"
+audience = { en = "1st year bachelor in Economics", fr = "L1 Économie" }
+years = "2021 – 2022"

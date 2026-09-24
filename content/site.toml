@@ -1,0 +1,86 @@
+# =====================================================================
+# Site-wide settings and home page content
+# Edit this file, then run:  python src/build.py
+# Text fields that differ by language are tables with `en` and `fr` keys.
+# =====================================================================
+
+base_url = "https://gheslan.github.io/"
+name = "Guewen Heslan"
+
+# Cookie-free visitor statistics (https://www.goatcounter.com).
+# Create a free account, then put your site code here (e.g. "gheslan").
+# Leave empty to disable statistics entirely.
+goatcounter = ""
+
+[contact]
+emails = [
+  { address = "guewen.heslan@u-pariscite.fr", label = "Université Paris Cité" },
+  { address = "guewen.heslan@univ-nantes.fr", label = "Nantes Université · LEMNA" },
+]
+
+# Academic profiles. Leave a URL empty ("") to hide the link.
+[[links]]
+name = "ORCID"
+url = "https://orcid.org/0009-0001-2729-5270"
+
+[[links]]
+name = "Google Scholar"
+url = ""   # e.g. "https://scholar.google.com/citations?user=XXXXXXX"
+
+[[links]]
+name = "RePEc / IDEAS"
+url = ""   # e.g. "https://ideas.repec.org/e/pxxxxxx.html"
+
+[[links]]
+name = "SSRN"
+url = ""   # e.g. "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=XXXXXXX"
+
+[[links]]
+name = "GitHub"
+url = "https://github.com/gheslan"
+
+[[links]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/guewen-heslan"
+
+[[links]]
+name = { en = "LEMNA profile", fr = "Page LEMNA" }
+url = "https://www.univ-nantes.fr/guewen-heslan-1"
+
+# ---------------------------------------------------------------------
+# Home page
+# ---------------------------------------------------------------------
+[home]
+title = { en = "Guewen Heslan — Economist", fr = "Guewen Heslan — Économiste" }
+description = { en = "Guewen Heslan, PhD candidate in economics (LEMNA, Nantes Université) and ATER at Université Paris Cité. Trade, environmental policy and maritime transport.", fr = "Guewen Heslan, doctorant en économie (LEMNA, Nantes Université) et ATER à l’Université Paris Cité. Commerce international, politique environnementale et transport maritime." }
+
+positions.en = [
+  "PhD candidate in Economics, LEMNA — Nantes Université",
+  "Temporary Teaching and Research Assistant (ATER), Université Paris Cité",
+]
+positions.fr = [
+  "Doctorant en économie, LEMNA — Nantes Université",
+  "Attaché temporaire d’enseignement et de recherche (ATER), Université Paris Cité",
+]
+
+lead.en = "I study how environmental policy reshapes trade flows and logistics networks — the economic mechanisms that translate regulation into the real-world movement of goods and capital."
+lead.fr = "J’étudie comment les politiques environnementales transforment les flux commerciaux et les réseaux logistiques — les mécanismes économiques qui traduisent la réglementation en mouvements concrets de biens et de capitaux."
+
+bio.en = "My doctoral research, at LEMNA (Nantes Université) in collaboration with LHEEA (Centrale Nantes), combines structural gravity models of trade with fleet and freight optimization models to study how carbon pricing and environmental regulation affect maritime trade and the decarbonization strategies of shipping companies. I am supervised by Rodica Loisel, Corinne Bagoulla and Pierre Marty."
+bio.fr = "Ma thèse, menée au LEMNA (Nantes Université) en collaboration avec le LHEEA (Centrale Nantes), associe des modèles de gravité structurels du commerce à des modèles d’optimisation de flotte et de fret, afin d’étudier comment la tarification du carbone et la réglementation environnementale affectent le commerce maritime et les stratégies de décarbonation des armateurs. Elle est dirigée par Rodica Loisel, Corinne Bagoulla et Pierre Marty."
+
+interests.en = ["international trade", "environmental and energy economics", "maritime transport", "carbon pricing"]
+interests.fr = ["commerce international", "économie de l’environnement et de l’énergie", "transport maritime", "tarification du carbone"]
+
+# Short news items shown on the home page (most recent first). date = "YYYY-MM".
+[[news]]
+date = "2026-09"
+text = { en = "Joined Université Paris Cité as ATER (Temporary Teaching and Research Assistant).", fr = "Arrivée à l’Université Paris Cité en tant qu’ATER." }
+
+[[news]]
+date = "2026-04"
+text = { en = "Presented “Global trade under environmental policy” at the EDGE Doctoral School conference, Le Mans.", fr = "Présentation de « Global trade under environmental policy » à la conférence de l’École doctorale EDGE, Le Mans." }
+
+[[news]]
+date = "2024-11"
+text = { en = "Marcel Boiteux Prize 2024 for the second best doctoral work, French Association of Energy Economists (FAEE).", fr = "Prix Marcel Boiteux 2024 du deuxième meilleur travail doctoral, Association des économistes de l’énergie (FAEE)." }

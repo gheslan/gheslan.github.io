@@ -6,3 +6,6 @@ design-system/
 *.tmp
 Thumbs.db
 desktop.ini
+
+# Python cache
+__pycache__/
