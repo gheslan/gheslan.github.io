@@ -77,6 +77,8 @@ UI = {
         wip_h="Work in progress", talks_h="Conferences and presentations",
         map_aria="Map of the cities where I presented my work", map_note="Circle size reflects the number of presentations. Lines start from Nantes (LEMNA).",
         talk_one="presentation", talk_many="presentations",
+        travel_low="Low-carbon travel", travel_flight="Flight",
+        travel_note="All trips were made by low-carbon transport, except Istanbul and the return from Bergen, which were made by plane.",
         cv_title="CV — Guewen Heslan", cv_desc="Curriculum vitae of Guewen Heslan.", cv_h1="Curriculum vitae",
         edu_h="Education", teach_h="Teaching", emp_h="Employment", award_h="Awards", skills_h="Skills", print="Print / save as PDF",
         t_title="Teaching — Guewen Heslan", t_desc="Courses taught by Guewen Heslan.", t_h1="Teaching",
@@ -99,6 +101,8 @@ UI = {
         wip_h="Travaux en cours", talks_h="Conférences et communications",
         map_aria="Carte des villes où j’ai présenté mes travaux", map_note="La taille des cercles reflète le nombre de présentations. Les lignes partent de Nantes (LEMNA).",
         talk_one="présentation", talk_many="présentations",
+        travel_low="Mobilité douce", travel_flight="Avion",
+        travel_note="Tous les déplacements ont été effectués en mobilité douce, sauf Istanbul et le retour de Bergen, effectués en avion.",
         cv_title="CV — Guewen Heslan", cv_desc="Curriculum vitae de Guewen Heslan.", cv_h1="Curriculum vitae",
         edu_h="Formation", teach_h="Enseignement", emp_h="Expérience professionnelle", award_h="Distinctions", skills_h="Compétences", print="Imprimer / enregistrer en PDF",
         t_title="Enseignement — Guewen Heslan", t_desc="Cours enseignés par Guewen Heslan.", t_h1="Enseignement",
@@ -336,8 +340,17 @@ def conference_map(lang, root):
             nx, ny = -dy / length, dx / length
             if ny > 0:
                 nx, ny = -nx, -ny
-            cx, cy = mx + nx * length * 0.18, my + ny * length * 0.18
-            arcs.append(f'<path class="map-arc draw" style="--d:{0.3 + n * 0.15:.2f}s" pathLength="1" d="M{hx:.1f} {hy:.1f} Q{cx:.1f} {cy:.1f} {x:.1f} {y:.1f}"/>')
+            travel = loc.get("travel", "low-carbon")
+            legs = [(travel, 0.18)] if isinstance(travel, str) else (
+                [(travel["out"], 0.18)] if travel["out"] == travel["back"] else [(travel["out"], 0.20), (travel["back"], -0.10)])
+            for mode, bend in legs:
+                cx, cy = mx + nx * length * bend, my + ny * length * bend
+                d = f"M{hx:.1f} {hy:.1f} Q{cx:.1f} {cy:.1f} {x:.1f} {y:.1f}"
+                delay = f"--d:{0.3 + n * 0.15:.2f}s"
+                if mode == "flight":
+                    arcs.append(f'<path class="map-arc flight fade" style="{delay}" d="{d}"/>')
+                else:
+                    arcs.append(f'<path class="map-arc low-carbon draw" style="{delay}" pathLength="1" d="{d}"/>')
         label_left = loc["lon"] > 20
         lx = x - r - 4 if label_left else x + r + 4
         anchor = "end" if label_left else "start"
@@ -359,6 +372,11 @@ def conference_map(lang, root):
         </svg>
         <div class="map-tip" role="status" aria-live="polite" hidden></div>
       </div>
+      <ul class="fig-legend map-legend">
+        <li><svg viewBox="0 0 26 8" aria-hidden="true"><path d="M1 4H25" stroke="var(--warm)" stroke-width="2"/></svg>{u['travel_low']}</li>
+        <li><svg viewBox="0 0 26 8" aria-hidden="true"><path d="M1 4H25" stroke="var(--fig-muted)" stroke-width="2" stroke-dasharray="3 3"/></svg>{u['travel_flight']}</li>
+      </ul>
+      <p class="map-travel-note">{u['travel_note']}</p>
       <figcaption>{u['map_note']}</figcaption>
       <script type="application/json" class="map-data">{json.dumps(data, ensure_ascii=False)}</script>
     </figure>"""

@@ -73,6 +73,12 @@ authors = { en = "Single-authored", fr = "Seul auteur" }
 # date = "YYYY-MM"
 # ---------------------------------------------------------------------
 [[talks]]
+date = "2026-07"
+title = "Global trade under maritime environmental policy"
+venue = { en = "17th World Conference on Transport Research (WCTR), Toulouse", fr = "17<sup>e</sup> World Conference on Transport Research (WCTR), Toulouse" }
+location = "toulouse"
+
+[[talks]]
 date = "2026-04"
 title = "Global trade under environmental policy"
 venue = { en = "Annual Conference of the EDGE Doctoral School, Le Mans Université", fr = "Conférence annuelle de l’École doctorale EDGE, Le Mans Université" }
@@ -120,11 +126,14 @@ title = "Shipowners’ carbon tax strategies: A partial equilibrium model applie
 venue = { en = "Carbon Policy in the Maritime Sector Conference, Université Paris Nanterre", fr = "Conférence « Carbon Policy in the Maritime Sector », Université Paris Nanterre" }
 location = "paris"
 
+# Travel mode from Nantes, used by the map: "low-carbon" (default) or "flight".
+# Use travel = { out = "...", back = "..." } when the outward and return trips differ.
 [locations]
 paris    = { name = { en = "Paris", fr = "Paris" }, lat = 48.86, lon = 2.35 }
 nantes   = { name = { en = "Nantes", fr = "Nantes" }, lat = 47.22, lon = -1.55 }
 lemans   = { name = { en = "Le Mans", fr = "Le Mans" }, lat = 48.00, lon = 0.20 }
 grenoble = { name = { en = "Grenoble", fr = "Grenoble" }, lat = 45.19, lon = 5.72 }
-bergen   = { name = { en = "Bergen", fr = "Bergen" }, lat = 60.39, lon = 5.32 }
-istanbul = { name = { en = "Istanbul", fr = "Istanbul" }, lat = 41.01, lon = 28.98 }
+bergen   = { name = { en = "Bergen", fr = "Bergen" }, lat = 60.39, lon = 5.32, travel = { out = "low-carbon", back = "flight" } }
+istanbul = { name = { en = "Istanbul", fr = "Istanbul" }, lat = 41.01, lon = 28.98, travel = "flight" }
 rabat    = { name = { en = "Rabat", fr = "Rabat" }, lat = 34.02, lon = -6.84 }
+toulouse = { name = { en = "Toulouse", fr = "Toulouse" }, lat = 43.60, lon = 1.44 }

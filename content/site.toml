@@ -78,6 +78,10 @@ date = "2026-09"
 text = { en = "Joined Université Paris Cité as ATER (Temporary Teaching and Research Assistant).", fr = "Arrivée à l’Université Paris Cité en tant qu’ATER." }
 
 [[news]]
+date = "2026-07"
+text = { en = "Presented “Global trade under maritime environmental policy” at the World Conference on Transport Research (WCTR), Toulouse.", fr = "Présentation de « Global trade under maritime environmental policy » à la World Conference on Transport Research (WCTR), Toulouse." }
+
+[[news]]
 date = "2026-04"
 text = { en = "Presented “Global trade under environmental policy” at the EDGE Doctoral School conference, Le Mans.", fr = "Présentation de « Global trade under environmental policy » à la conférence de l’École doctorale EDGE, Le Mans." }
 

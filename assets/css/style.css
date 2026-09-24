@@ -345,8 +345,13 @@ main { padding: 3.5rem 0 2rem; }
 /* ---------- Conference map ---------- */
 .conf-map { padding: 0.75rem 0.75rem 0.6rem; margin: 0 0 1.75rem; }
 .map-wrap { position: relative; }
-.conf-map svg { display: block; width: 100%; height: auto; margin: 0 auto; overflow: hidden; border-radius: 6px; }
-.map-arc { fill: none; stroke: var(--warm); stroke-width: 1.2; stroke-linecap: round; opacity: 0.55; }
+.conf-map .map-wrap > svg { display: block; width: 100%; height: auto; margin: 0 auto; overflow: hidden; border-radius: 6px; }
+.map-arc { fill: none; stroke-width: 1.3; stroke-linecap: round; }
+.map-arc.low-carbon { stroke: var(--warm); opacity: 0.7; }
+.map-arc.flight { stroke: var(--fig-muted); stroke-dasharray: 3 3; }
+.js .conf-map.is-visible .map-arc.flight { opacity: 0.9; }
+.map-legend { margin-top: 0.6rem; }
+.map-travel-note { font-size: 0.88rem; margin: 0.35rem 0 0.25rem; }
 .map-marker { cursor: pointer; outline: none; }
 .map-dot { fill: var(--accent); stroke: #fff; stroke-width: 1.5; transition: fill 0.25s ease; }
 .map-marker.home .map-dot { fill: var(--warm); }
