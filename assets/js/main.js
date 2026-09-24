@@ -78,11 +78,19 @@
   Mover.prototype.start = function () {
     if (reduceMotion || this.raf || !this.paths.length) return;
     var self = this;
+    var FADE_IN = 400, HOLD = 250;
+    this.t0 = performance.now(); // always restart from the beginning, with a fade-in
+    this.marker.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
     var tick = function (now) {
       var cycle = self.duration + self.pause;
       var e = (now - self.t0) % cycle;
       var f = Math.min(e / self.duration, 1);
       self.place(f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2); // ease-in-out
+      // Fade in at the start, fade out at the end before looping back
+      var o = 1;
+      if (e < FADE_IN) o = e / FADE_IN;
+      else if (e > self.duration + HOLD) o = Math.max(0, 1 - (e - self.duration - HOLD) / (self.pause - HOLD));
+      self.marker.style.opacity = o.toFixed(3);
       self.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);

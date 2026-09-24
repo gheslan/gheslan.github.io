@@ -57,14 +57,14 @@
       <p class="status">Earlier version: “Maritime decarbonization pathways: a trade-off between operational and technical measures” — Marcel Boiteux Prize 2024 (FAEE)</p>
       <p class="abstract">Decarbonizing shipping combines short-term operational levers, such as speed optimization, with the long-term adoption of new technologies and alternative fuels. We build a mixed-integer nonlinear fleet-deployment model calibrated on Asia–Europe liner services to study how carbon pricing shapes both, comparing a global carbon tax with the regionally scoped EU ETS across several technology-maturity scenarios.</p>
       <figure class="figure">
-        <svg viewBox="0 0 360 220" role="img" aria-label="Stylized chart: as the carbon price rises, vessel speed falls while fleet size first rises then falls once low-carbon propulsion becomes competitive.">
+        <svg viewBox="0 0 360 220" role="img" aria-label="Stylized chart: as the carbon price rises, vessel speed falls and fleet size grows; once low-carbon propulsion becomes competitive, speed returns to its initial level and the fleet contracts.">
           <rect class="fig-zone fade" style="--d:1.6s" x="252" y="20" width="93" height="170" rx="4"/>
-          <text class="fig-label fade" style="--d:1.9s" x="298" y="34" text-anchor="middle">Low-carbon</text>
-          <text class="fig-label fade" style="--d:1.9s" x="298" y="46" text-anchor="middle">propulsion</text>
-          <text class="fig-label fade" style="--d:1.9s" x="298" y="58" text-anchor="middle">competitive</text>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="160" text-anchor="middle">Low-carbon</text>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="171" text-anchor="middle">propulsion</text>
+          <text class="fig-label fade" style="--d:1.9s" x="298" y="182" text-anchor="middle">competitive</text>
           <path class="fig-grid" d="M40 60H345M40 105H345M40 150H345" stroke-dasharray="2 5"/>
           <path class="fig-axis" d="M40 20V190H345"/>
-          <path id="f1-speed" class="fig-line accent draw" style="--d:.2s" pathLength="1" d="M40 45 C 120 55, 190 120, 345 152"/>
+          <path id="f1-speed" class="fig-line accent draw" style="--d:.2s" pathLength="1" d="M40 45 C 110 50, 170 128, 240 130 C 285 131, 310 52, 345 45"/>
           <path id="f1-fleet" class="fig-line warm draw" style="--d:.6s" pathLength="1" d="M40 165 C 110 163, 160 64, 220 64 C 275 64, 305 128, 345 158"/>
           <text class="fig-label accent fade" style="--d:1s" x="48" y="36">Vessel speed</text>
           <text class="fig-label warm fade" style="--d:1.4s" x="196" y="52" text-anchor="middle">Fleet size</text>
@@ -77,7 +77,7 @@
         <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>Preliminary results</summary>
         <div class="findings-body">
           <ul>
-            <li>Carbon pricing acts first through speed: vessels slow down, and carriers need additional ships to maintain service frequency.</li>
+            <li>Carbon pricing acts first through speed: vessels slow down, and carriers need additional ships to maintain service frequency. Once low-carbon propulsion becomes competitive, speeds return to their initial level.</li>
             <li>Fleet size responds non-monotonically to the carbon price, expanding before contracting once low-carbon propulsion becomes competitive.</li>
             <li>The transition favours larger vessels and progressively redirects cargo toward the most carbon-efficient routes.</li>
             <li>Without e-fuels, carbon pricing alone delivers only partial emission cuts, and regional pricing through the EU ETS does not trigger structural fuel switching.</li>
