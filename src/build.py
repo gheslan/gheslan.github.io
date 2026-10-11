@@ -170,6 +170,8 @@ def page(lang, rel, title, desc, body, jsonld=None, noindex=False):
     og_img = BASE + "assets/img/og-image.png"
     ld = f'\n  <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     robots = '\n  <meta name="robots" content="noindex">' if noindex else ""
+    if SITE.get("google_site_verification"):
+        robots += f'\n  <meta name="google-site-verification" content="{attr(SITE["google_site_verification"])}">'
     stats = ""
     if SITE.get("goatcounter"):
         stats = (f'\n  <script data-goatcounter="https://{SITE["goatcounter"]}.goatcounter.com/count" '

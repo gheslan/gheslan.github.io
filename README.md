@@ -58,8 +58,8 @@ no personal data stored, so no consent banner is required. Create an account, th
 ## Optional: Google Search Console
 
 To follow how the site appears in Google, add the property `https://gheslan.github.io/` in
-[Search Console](https://search.google.com/search-console) (HTML-tag verification: send me the
-`<meta name="google-site-verification">` tag to add), then submit `https://gheslan.github.io/sitemap.xml`.
+[Search Console](https://search.google.com/search-console) (HTML-tag verification: paste the tag's `content` value into
+`google_site_verification` in `content/site.toml`, rebuild and push), then submit `https://gheslan.github.io/sitemap.xml`.
 
 ## Private files
 

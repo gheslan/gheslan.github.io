@@ -34,7 +34,7 @@ HTML = """<!doctype html><html><head><meta charset="utf-8">
 <svg class="iso" viewBox="0 0 1200 630" preserveAspectRatio="none">PATHS</svg>
 <div class="card">
   <h1>Guewen Heslan<span>.</span></h1>
-  <p>Economist — trade, environmental policy &amp; maritime transport<br>LEMNA, Nantes Université · Université Paris Cité</p>
+  <p>PhD Candidate in Economics<br>Trade, environmental policy &amp; maritime transport<br>LEMNA, Nantes Université · Université Paris Cité</p>
   <div class="bar"></div>
 </div>
 <div class="url">gheslan.github.io</div>
