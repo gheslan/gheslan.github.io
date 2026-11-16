@@ -70,14 +70,4 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://gheslan.github.io/teaching/macroeconomics.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://gheslan.github.io/fr/teaching/macroeconomics.html"/>
   </url>
-  <url>
-    <loc>https://gheslan.github.io/teaching/statistics.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gheslan.github.io/teaching/statistics.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://gheslan.github.io/fr/teaching/statistics.html"/>
-  </url>
-  <url>
-    <loc>https://gheslan.github.io/fr/teaching/statistics.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gheslan.github.io/teaching/statistics.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://gheslan.github.io/fr/teaching/statistics.html"/>
-  </url>
 </urlset>

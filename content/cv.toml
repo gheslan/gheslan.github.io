@@ -37,7 +37,7 @@ bullets.fr = ["<em>Mémoire :</em> Effets d’une hausse de la taxe carbone en F
 when = { en = "2026 – present", fr = "2026 – auj." }
 title = { en = "Temporary Teaching and Research Assistant (ATER)", fr = "Attaché temporaire d’enseignement et de recherche (ATER)" }
 org = "Université Paris Cité"
-desc = { en = "Environmental Economics (L1, lectures); Mathematics (L1), Macroeconomics (L1) and Statistics (L2), tutorials", fr = "Économie de l’environnement (L1, cours magistral) ; Mathématiques (L1), Macroéconomie (L1) et Statistiques (L2) en travaux dirigés" }
+desc = { en = "Environmental Economics (L2, lectures); Mathematics (L1) and Macroeconomics (L1), tutorials", fr = "Économie de l’environnement (L2, cours magistral) ; Mathématiques (L1) et Macroéconomie (L1) en travaux dirigés" }
 
 [[teaching]]
 when = "2024 – 2025"

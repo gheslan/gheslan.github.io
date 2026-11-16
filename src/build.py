@@ -12,6 +12,7 @@ import math
 import os
 import re
 import tomllib
+from datetime import datetime
 
 from figures import FIGURES
 
@@ -541,8 +542,18 @@ def build_cv(lang):
     page(lang, "cv.html", u["cv_title"], u["cv_desc"], body)
 
 
+def released(m):
+    """A material with `available = "YYYY-MM-DDTHH:MM"` (local time) stays hidden until then."""
+    a = m.get("available")
+    return not a or datetime.now() >= datetime.fromisoformat(str(a))
+
+
+def visible_materials(c):
+    return [m for m in c.get("materials", []) if released(m)]
+
+
 def material_count(c):
-    return len(c.get("materials", []))
+    return len(visible_materials(c))
 
 
 def build_teaching(lang):
@@ -595,7 +606,7 @@ def build_teaching(lang):
     for c in TEACH["courses"]:
         name = tr(c["name"], lang)
         croot = root + "../"
-        mats = c.get("materials", [])
+        mats = visible_materials(c)
         if mats:
             rows = "\n".join(f"""      <li>
         <a href="{croot}{m['file']}" download>
