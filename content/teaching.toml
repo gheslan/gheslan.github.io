@@ -27,17 +27,10 @@ description = { en = "", fr = "" }
 # Optional: practical information (schedule, room, office hours…)
 info = { en = "", fr = "" }
 [[courses.materials]]
-title = { en = "Tutorial 1 — Carbon pricing: three sectors, three instruments", fr = "TD 1 — Le carbone : trois secteurs, trois instruments" }
-file = "files/teaching/environmental-economics/td1-carbon-climate.pdf"
-kind = "exercises"     # slides | exercises | solutions | exam | reading | other
+title = { en = "Lecture 1 — Carbon: from theory to climate policy in practice", fr = "CM 1 — Le carbone : de la théorie à la pratique des politiques climatiques" }
+file = "files/teaching/environmental-economics/cm1-carbon-climate-slides.pdf"
+kind = "slides"
 date = "2026-11"
-
-[[courses.materials]]
-title = { en = "Tutorial 1 — Answer key", fr = "TD 1 — Corrigé" }
-file = "files/teaching/environmental-economics/td1-carbon-climate-answers.pdf"
-kind = "solutions"
-date = "2026-11"
-available = "2026-11-16T20:00"   # hidden from the site until this local date and time
 
 [[courses]]
 slug = "mathematics"
