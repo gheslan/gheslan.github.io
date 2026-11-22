@@ -87,6 +87,7 @@ UI = {
         soon="Materials coming soon", n_materials="documents", open_course="Course page",
         c_back="All courses", c_about="About the course", c_info="Practical information", c_materials="Materials",
         c_empty="Materials will be posted here during the semester.",
+        m_view="Open in a new tab", m_download="Download",
         kinds=dict(slides="Slides", exercises="Exercises", solutions="Solutions", exam="Exam", reading="Reading", other="Document"),
         stats_note="This site uses GoatCounter, a cookie-free and privacy-friendly visitor counter.",
         nf_title="Page not found", nf_text="This page does not exist or has moved.", home="Home",
@@ -111,6 +112,7 @@ UI = {
         soon="Supports bientôt disponibles", n_materials="documents", open_course="Page du cours",
         c_back="Tous les cours", c_about="Présentation du cours", c_info="Informations pratiques", c_materials="Supports",
         c_empty="Les supports seront publiés ici au fil du semestre.",
+        m_view="Ouvrir dans un nouvel onglet", m_download="Télécharger",
         kinds=dict(slides="Diapositives", exercises="Exercices", solutions="Corrigés", exam="Examen", reading="Lecture", other="Document"),
         stats_note="Ce site utilise GoatCounter, un compteur de visites sans cookies et respectueux de la vie privée.",
         nf_title="Page introuvable", nf_text="Cette page n’existe pas ou a été déplacée.", home="Accueil",
@@ -126,6 +128,7 @@ ICONS = {
     "env": '<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15z"/><path d="M5 19l7-7"/>',
     "energy": '<path d="M13 3 5 14h6l-1 7 8-11h-6z"/>',
     "file": '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',
+    "download": '<path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/>',
 }
 LOGOS = [
     ("Paris Cité", "paris-cite.svg", "Université Paris Cité"),
@@ -609,10 +612,13 @@ def build_teaching(lang):
         mats = visible_materials(c)
         if mats:
             rows = "\n".join(f"""      <li>
-        <a href="{croot}{m['file']}" download>
+        <a class="mat-view" href="{croot}{m['file']}" target="_blank" rel="noopener" title="{u['m_view']}">
           <span class="mat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{ICONS['file']}</svg></span>
           <span class="mat-title">{h(tr(m['title'], lang))}</span>
           <span class="mat-meta">{u['kinds'].get(m.get('kind', 'other'), u['kinds']['other'])}{' · ' + month(m['date'], lang) if m.get('date') else ''}</span>
+        </a>
+        <a class="mat-dl" href="{croot}{m['file']}" download aria-label="{u['m_download']} — {h(tr(m['title'], lang))}" title="{u['m_download']}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS['download']}</svg>
         </a>
       </li>""" for m in mats)
             materials = f'    <ul class="materials">\n{rows}\n    </ul>'

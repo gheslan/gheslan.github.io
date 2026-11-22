@@ -392,12 +392,20 @@ main { padding: 3.5rem 0 2rem; }
 .course-head .course-icon { width: 52px; height: 52px; flex: none; margin-top: 0.35rem; }
 .course-head .course-icon svg { width: 26px; height: 26px; }
 .materials { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.materials li { display: flex; gap: 0.5rem; align-items: stretch; }
 .materials a {
-  display: grid; grid-template-columns: auto 1fr auto; gap: 0.9rem; align-items: center;
-  padding: 0.8rem 1rem; border: 1px solid var(--rule); border-radius: 10px; color: inherit; text-decoration: none;
-  transition: border-color 0.25s ease, transform 0.3s var(--ease);
+  border: 1px solid var(--rule); border-radius: 10px; color: inherit; text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.3s var(--ease);
 }
-.materials a:hover { border-color: var(--rule-strong); transform: translateX(3px); }
+.materials a:hover { border-color: var(--rule-strong); }
+.mat-view {
+  flex: 1; min-width: 0; display: grid; grid-template-columns: auto 1fr auto; gap: 0.9rem; align-items: center;
+  padding: 0.8rem 1rem;
+}
+.mat-view:hover { transform: translateX(3px); }
+.mat-dl { flex: none; display: inline-grid; place-items: center; width: 48px; color: var(--fg-muted); }
+.mat-dl:hover { color: var(--warm); }
+.mat-dl svg { width: 20px; height: 20px; }
 .mat-icon { color: var(--warm); display: inline-grid; }
 .mat-icon svg { width: 20px; height: 20px; }
 .mat-title { font-weight: 700; }
