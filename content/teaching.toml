@@ -40,6 +40,11 @@ level = { en = "1st year bachelor (L1)", fr = "Licence 1" }
 format = { en = "Tutorials", fr = "Travaux dirigés" }
 description = { en = "", fr = "" }
 info = { en = "", fr = "" }
+[[courses.materials]]
+title = { en = "Review tutorial (sessions 1–5) — Answer key", fr = "TD de synthèse (séances 1 à 5) — Corrigé" }
+file = "files/teaching/mathematics/td-synthese-corrige.pdf"
+kind = "solutions"
+date = "2026-11"
 
 [[courses]]
 slug = "macroeconomics"
