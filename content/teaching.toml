@@ -46,6 +46,18 @@ file = "files/teaching/mathematics/td-synthese.pdf"
 kind = "exercises"
 date = "2026-11"
 
+[[courses.materials]]
+title = { en = "Review tutorial — Answer key", fr = "TD de synthèse — Corrigé" }
+file = "files/teaching/mathematics/td-synthese-corrige.pdf"
+kind = "solutions"
+date = "2026-11"
+
+[[courses.materials]]
+title = { en = "Method sheet — Constrained optimisation (Lagrangian and Hessian)", fr = "Fiche méthode — Optimisation sous contrainte (lagrangien et hessienne)" }
+file = "files/teaching/mathematics/fiche-lagrangien.pdf"
+kind = "other"
+date = "2026-11"
+
 [[courses]]
 slug = "macroeconomics"
 icon = "macro"
