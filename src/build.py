@@ -90,6 +90,7 @@ UI = {
         m_view="Open in a new tab", m_download="Download",
         kinds=dict(slides="Slides", exercises="Exercises", solutions="Solutions", exam="Exam", reading="Reading", other="Document"),
         stats_note="This site uses GoatCounter, a cookie-free and privacy-friendly visitor counter.",
+        legal_link="Legal notice and privacy", legal_title="Legal notice and privacy",
         nf_title="Page not found", nf_text="This page does not exist or has moved.", home="Home",
     ),
     "fr": dict(
@@ -115,11 +116,33 @@ UI = {
         m_view="Ouvrir dans un nouvel onglet", m_download="Télécharger",
         kinds=dict(slides="Diapositives", exercises="Exercices", solutions="Corrigés", exam="Examen", reading="Lecture", other="Document"),
         stats_note="Ce site utilise GoatCounter, un compteur de visites sans cookies et respectueux de la vie privée.",
+        legal_link="Mentions légales et confidentialité", legal_title="Mentions légales et confidentialité",
         nf_title="Page introuvable", nf_text="Cette page n’existe pas ou a été déplacée.", home="Accueil",
     ),
 }
 
-FONTS = "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap"
+# Fonts are self-hosted (assets/fonts, assets/css/fonts.css): no visitor data goes to Google.
+
+# Language choice: an explicit choice (FR/EN button) is remembered; otherwise French when the
+# device language is French or its time zone is in France, English elsewhere. Crawlers are left
+# alone so that both language versions stay indexed.
+LANG_SCRIPT = ("(function(){try{"
+    "var K='lang',cur=document.documentElement.lang;"
+    "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');"
+    "if(a&&a.closest('header')){try{localStorage.setItem(K,a.getAttribute('hreflang'))}catch(_){}}},true);"
+    "if(/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent))return;"
+    "var want=localStorage.getItem(K);"
+    "if(want!=='fr'&&want!=='en'){"
+    "var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';"
+    "var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(_){}"
+    "var FR=['Europe/Paris','America/Guadeloupe','America/Martinique','America/Cayenne','America/Marigot',"
+    "'America/St_Barthelemy','America/Miquelon','Indian/Reunion','Indian/Mayotte','Pacific/Tahiti',"
+    "'Pacific/Marquesas','Pacific/Gambier','Pacific/Noumea','Pacific/Wallis','Indian/Kerguelen'];"
+    "want=(/^fr/i.test(l)||FR.indexOf(tz)>=0)?'fr':'en'}"
+    "if(want===cur)return;"
+    "var alt=document.querySelector('link[rel=alternate][hreflang='+want+']');"
+    "if(alt)location.replace(alt.href+location.search+location.hash)"
+    "}catch(_){}})();")
 CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>'
 ICONS = {
     "math": '<path d="M17 5H7l6 7-6 7h10"/>',
@@ -204,11 +227,9 @@ def page(lang, rel, title, desc, body, jsonld=None, noindex=False):
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="{root}assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="{FONTS}" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{FONTS}"></noscript>
+  <link rel="stylesheet" href="{root}assets/css/fonts.css">
   <script>document.documentElement.classList.add("js");</script>
+  <script>{LANG_SCRIPT}</script>
   <link rel="stylesheet" href="{root}assets/css/style.css">{ld}{stats}
 </head>
 <body>
@@ -237,7 +258,8 @@ def page(lang, rel, title, desc, body, jsonld=None, noindex=False):
   <footer class="site-footer">
     <div class="container">
       <span>© <span id="year">2026</span> {SITE['name']}</span>
-      <a href="mailto:{SITE['contact']['emails'][0]['address']}">{SITE['contact']['emails'][0]['address']}</a>{footer_stats}
+      <a href="mailto:{SITE['contact']['emails'][0]['address']}">{SITE['contact']['emails'][0]['address']}</a>
+      <a href="{lroot}legal.html">{u['legal_link']}</a>{footer_stats}
     </div>
   </footer>
 
@@ -654,6 +676,58 @@ def build_teaching(lang):
         page(lang, f"teaching/{c['slug']}.html", f"{name} — {SITE['name']}", f"{name}: {tr(c['level'], lang)}, {TEACH['current_institution']}.", body)
 
 
+LEGAL = {
+    "en": dict(
+        lead="Who publishes this site, and what happens to your data when you visit it.",
+        sections=[
+            ("Publisher", "This is the personal, non-commercial website of {name}, PhD candidate in economics. Contact: <a href=\"mailto:{email}\">{email}</a>."),
+            ("Hosting", "The site is hosted by GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States (<a href=\"https://github.com\">github.com</a>)."),
+            ("No cookies, no tracking", "{stats}The site loads nothing from third-party servers: fonts, scripts and images are all served from this site. There are no advertising, social-media or tracking scripts."),
+            ("Language preference", "The language of the site is chosen in your browser from its language setting and time zone; nothing is sent anywhere. If you use the FR/EN button, your choice is stored in your browser’s local storage (key <code>lang</code>) so that it is kept on your next visit. It never leaves your device and you can delete it at any time from your browser settings."),
+            ("Hosting logs", "Like any web host, GitHub may record technical data such as visitors’ IP addresses to run and secure its service. I have no access to these data. See the <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">GitHub General Privacy Statement</a>."),
+            ("Email", "If you write to me, your address and message are used only to reply to you and are not passed on to anyone."),
+            ("External links", "Links to other sites (ORCID, LinkedIn, GitHub, universities…) are subject to those sites’ own privacy policies."),
+            ("Your rights", "Under the EU General Data Protection Regulation you have the right to access, correct and erase data about you, and to object to their processing: write to <a href=\"mailto:{email}\">{email}</a>. You may also lodge a complaint with the French data protection authority, the <a href=\"https://www.cnil.fr\">CNIL</a>."),
+        ],
+        stats_on="Visits are counted with GoatCounter, which uses no cookies and keeps only aggregate statistics (pages viewed, referrer, browser, country), without storing IP addresses. ",
+        stats_off="The site sets no cookies and measures no audience. ",
+    ),
+    "fr": dict(
+        lead="Qui publie ce site, et ce que deviennent vos données lorsque vous le consultez.",
+        sections=[
+            ("Éditeur", "Ce site est le site personnel et non commercial de {name}, doctorant en économie. Contact : <a href=\"mailto:{email}\">{email}</a>."),
+            ("Hébergement", "Le site est hébergé par GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (<a href=\"https://github.com\">github.com</a>)."),
+            ("Ni cookies, ni traceurs", "{stats}Le site ne charge rien depuis des serveurs tiers : polices, scripts et images sont tous servis par le site lui-même. Il n’y a aucun script publicitaire, de réseau social ou de suivi."),
+            ("Préférence de langue", "La langue du site est choisie dans votre navigateur à partir de sa langue et de son fuseau horaire ; rien n’est transmis. Si vous utilisez le bouton FR/EN, votre choix est enregistré dans le stockage local de votre navigateur (clé <code>lang</code>) pour être conservé lors de votre prochaine visite. Il ne quitte jamais votre appareil et vous pouvez le supprimer à tout moment dans les réglages de votre navigateur."),
+            ("Journaux de l’hébergeur", "Comme tout hébergeur, GitHub peut enregistrer des données techniques, telles que l’adresse IP des visiteurs, pour faire fonctionner et sécuriser son service. Je n’ai pas accès à ces données. Voir la <a href=\"https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement\">déclaration de confidentialité de GitHub</a>."),
+            ("Courriel", "Si vous m’écrivez, votre adresse et votre message servent uniquement à vous répondre et ne sont transmis à personne."),
+            ("Liens externes", "Les liens vers d’autres sites (ORCID, LinkedIn, GitHub, universités…) relèvent des politiques de confidentialité de ces sites."),
+            ("Vos droits", "Conformément au Règlement général sur la protection des données (RGPD), vous disposez d’un droit d’accès, de rectification, d’effacement et d’opposition sur les données vous concernant : écrivez à <a href=\"mailto:{email}\">{email}</a>. Vous pouvez aussi adresser une réclamation à la <a href=\"https://www.cnil.fr\">CNIL</a>."),
+        ],
+        stats_on="Les visites sont comptées avec GoatCounter, qui n’utilise aucun cookie et ne conserve que des statistiques agrégées (pages vues, provenance, navigateur, pays), sans enregistrer les adresses IP. ",
+        stats_off="Le site ne dépose aucun cookie et ne mesure pas l’audience. ",
+    ),
+}
+
+
+def build_legal(lang):
+    u, L = UI[lang], LEGAL[lang]
+    email = SITE["contact"]["emails"][0]["address"]
+    stats = L["stats_on"] if SITE.get("goatcounter") else L["stats_off"]
+    secs = "".join(f"""
+  <section class="section reveal">
+    <h2>{t}</h2>
+    <p>{txt.format(name=SITE['name'], email=email, stats=stats)}</p>
+  </section>""" for t, txt in L["sections"])
+    body = f"""
+  <header class="hero-in">
+    <h1 class="page-title">{u['legal_title']}</h1>
+    <p class="page-lead">{L['lead']}</p>
+  </header>{secs}
+"""
+    page(lang, "legal.html", f"{u['legal_title']} — {SITE['name']}", L["lead"], body)
+
+
 def build_404():
     u = UI["en"]
     body = f"""
@@ -669,7 +743,7 @@ def build_404():
     s = open(p, encoding="utf-8").read()
     s = s.replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/')
     s = s.replace('href="research.html"', 'href="/research.html"').replace('href="cv.html"', 'href="/cv.html"')
-    s = s.replace('href="teaching.html"', 'href="/teaching.html"').replace('href="fr/', 'href="/fr/').replace('href="./"', 'href="/"')
+    s = s.replace('href="teaching.html"', 'href="/teaching.html"').replace('href="fr/', 'href="/fr/').replace('href="./"', 'href="/"').replace('href="legal.html"', 'href="/legal.html"')
     open(p, "w", encoding="utf-8", newline="\n").write(s)
 
 
@@ -698,6 +772,7 @@ def main():
         build_research(lang)
         build_cv(lang)
         build_teaching(lang)
+        build_legal(lang)
     build_404()
     build_sitemap()
     print(f"Built {len(WRITTEN)} pages × {len(LANGS)} languages, sitemap.xml, robots.txt")

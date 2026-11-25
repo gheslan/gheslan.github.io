@@ -43,7 +43,7 @@ src/build.py          Page generator            → *.html, fr/*.html, teaching/
 src/figures.py        Animated figures of the working papers
 src/basemap.py        Rebuilds the map outline (only if the map window changes)
 src/og_image.py       Rebuilds the link-preview image assets/img/og-image.png (needs Chrome)
-assets/               CSS, JS, images, logos
+assets/               CSS, JS, images, logos, self-hosted fonts (assets/fonts, no Google Fonts request)
 files/teaching/       Course materials (PDFs…)
 ```
 
